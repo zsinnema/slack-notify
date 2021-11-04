@@ -1,5 +1,6 @@
 
-DOCKER_REGISTRY ?= "technosophos"
+DOCKER_REGISTRY ?= "us.gcr.io/metacellllc/ifn/"
+VERSION ?= 1.0.1
 
 .PHONY: build
 build:
@@ -10,11 +11,11 @@ build:
 docker-build:
 	mkdir -p rootfs
 	GOOS=linux GOARCH=amd64 go build -o rootfs/slack-notify ./main.go
-	docker build -t $(DOCKER_REGISTRY)/slack-notify:latest .
+	docker build -t $(DOCKER_REGISTRY)/ifn-stats:${VERSION} .
 
 .PHONY: docker-push
 docker-push:
-	docker push $(DOCKER_REGISTRY)/slack-notify
+	docker push $(DOCKER_REGISTRY)/ifn-stats:${VERSION}
 
 .PHONY: bootstrap
 bootstrap:

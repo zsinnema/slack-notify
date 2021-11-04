@@ -1,0 +1,26 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: ifn-stats
+  labels:
+    app: mnp-ifn
+spec:
+  schedule: "0 9 * * *"
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: ifn-stats
+              image: us.gcr.io/metacellllc/ifn/ifn-stats:1.0.1
+              imagePullPolicy: IfNotPresent
+              resources:
+                limits:
+                  cpu: 100m
+                  memory: 256Mi
+                requests:
+                  cpu: 10m
+                  memory: 32Mi
