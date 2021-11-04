@@ -1,5 +1,5 @@
 
-DOCKER_REGISTRY ?= "us.gcr.io/metacellllc/ifn/"
+DOCKER_REGISTRY ?= "us.gcr.io/metacellllc/ifn"
 VERSION ?= 1.0.1
 
 .PHONY: build
