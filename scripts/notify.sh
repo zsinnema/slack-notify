@@ -2,8 +2,6 @@
 
 set -e
 
-# The Slack-assigned webhook
-export SLACK_WEBHOOK=https://hooks.slack.com/services/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
 # The title of the message
 export SLACK_TITLE="Today's IFN stats"
 # The name of the sender of the message. Does not need to be a "real" username

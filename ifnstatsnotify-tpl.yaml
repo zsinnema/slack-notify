@@ -17,6 +17,12 @@ spec:
             - name: ifn-stats
               image: us.gcr.io/metacellllc/ifn/ifn-stats:{VERSION}
               imagePullPolicy: IfNotPresent
+              env:
+              - name: SLACK_WEBHOOK
+                valueFrom:
+                  secretKeyRef:
+                    name: slackwebhook
+                    key: webhook.txt
               resources:
                 limits:
                   cpu: 100m

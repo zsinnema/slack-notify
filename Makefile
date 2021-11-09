@@ -1,6 +1,6 @@
 
 DOCKER_REGISTRY ?= "us.gcr.io/metacellllc/ifn"
-VERSION ?= 1.0.10
+VERSION ?= 1.0.13
 
 .PHONY: build
 build:
