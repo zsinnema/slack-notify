@@ -6,7 +6,7 @@ RUN add-apt-repository 'deb https://repo.mongodb.org/apt/debian buster/mongodb-o
 RUN apt-get update
 RUN apt-get install -y mongodb-org-shell
 
-COPY rootfs /
+COPY scripts /
 
 RUN chmod +x /*.sh
 

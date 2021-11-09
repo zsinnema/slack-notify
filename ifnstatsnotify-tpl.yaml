@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mnp-ifn
 spec:
-  schedule: "0 9 * * *"
+  schedule: "30 7 * * *"
   successfulJobsHistoryLimit: 2
   failedJobsHistoryLimit: 2
   jobTemplate:
@@ -15,7 +15,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: ifn-stats
-              image: us.gcr.io/metacellllc/ifn/ifn-stats:1.0.1
+              image: us.gcr.io/metacellllc/ifn/ifn-stats:{VERSION}
               imagePullPolicy: IfNotPresent
               resources:
                 limits:
